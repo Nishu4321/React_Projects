@@ -15,6 +15,7 @@ import BasicButtonGroup from "./components/ButtonGroup/BasicButtonGroup";
 import GroupSizesColors from "./components/ButtonGroup/GroupSizesColors";
 import GroupOrientation from "./components/ButtonGroup/VerticalButton";
 import CheckboxLabels from "./components/CheckBox/CheckboxLabels";
+import FloatingActionButtons from "./components/FloatingActionButton/FloatingActionButton";
 
 const Mui = () => {
   return (
@@ -40,6 +41,8 @@ const Mui = () => {
 
         {/* checkBox */}
         <CheckboxLabels />
+
+        <FloatingActionButtons />
       </div>
     </>
   );
