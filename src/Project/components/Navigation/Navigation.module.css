@@ -1,0 +1,28 @@
+
+
+.container {
+ 
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  background-color: white;
+}
+
+.list{
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  color: black;
+  font-size: larger;
+}
+
+.btn{
+  padding: 6px 16px;
+  background: brown;
+  height: 32px;
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+} 

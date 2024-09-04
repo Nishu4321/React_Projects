@@ -1,0 +1,43 @@
+ *{
+    margin: 0;
+    padding: 0;
+}
+/*
+.nav-logo{
+    background-image: url("./images/brand_logo.png");
+    background-repeat: no-repeat;
+    height: 70px;
+    margin-top: 26px;
+    width: 100px
+}
+
+.navdiv{
+    
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+     height: 72px;
+    
+    align-items: center;
+}
+
+.uldiv{
+    gap:24px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbtn{
+  
+    height: 32px;
+    padding: 6px 16px;
+    color: white;
+    font-weight: 500;
+    background-color: rgb(231, 67, 67);
+    border-radius: 3px;
+    cursor: pointer;
+
+   
+
+} */

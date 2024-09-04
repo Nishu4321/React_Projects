@@ -1,0 +1,29 @@
+.body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .shopping_main {
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    .product_list {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+ 
+    .product {
+        width: 50%;
+    }
+ 
+    .cart {
+        min-width: unset;
+        margin-top: 30px;
+    }
+}

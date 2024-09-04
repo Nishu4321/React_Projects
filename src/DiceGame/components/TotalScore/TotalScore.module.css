@@ -1,0 +1,23 @@
+
+/* 
+.right-topnav{
+    max-width: 200px;
+    text-align: center;
+    margin-left: 100px;
+    
+}
+
+.right-topnav h1{
+    font-size: 100px;
+}
+.right-topnav p{
+    font-size: 24px;
+    font-weight: 500px;
+} */ 
+
+.divleft{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+}

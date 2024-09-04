@@ -1,0 +1,96 @@
+.todobody{
+    background-color: rgb(154, 126, 126);
+    display: flex;
+    justify-content: center;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    /* margin: 10px 257px;
+    margin-top: 10px; */
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.formdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    width: 80%;
+    background-color: rgb(247, 242, 242);
+    /* margin: 0 257px; */
+    margin-left: 10%
+    ;
+    border-radius: 10px;
+    border: 2px solid black;
+    
+}
+.input{
+    font-size: 18px;
+    margin: 10px;
+    padding: 5px 7px;
+    border-radius: 5px;
+    border: 1px;
+    background-color: rgb(185, 178, 178);
+
+}
+
+.input_btn{
+    background-color: rgb(129, 23, 23);
+    color: white;
+    padding: 5px;
+    height: 30px;
+    width: 82px;
+    font-weight: 400;
+    border-radius: 5px;
+    margin-left: 6px;
+    cursor: pointer;
+    
+}
+
+.data{
+    background-color: floralwhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 0 10px;
+   border: 2px solid black;
+   border-radius: 5px;
+   height: 66px;
+   margin-top: 10px;
+  
+   
+}
+.data h4{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.data button{
+    height: 32px;
+    width: 111px;
+    background-color: rgb(245, 88, 88);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.datadiv{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    /* background-color: red; */
+    height: 75vh;
+    /* width: 1000px; */
+    border: 2px solid black;
+    /* margin: 10px 257px; */
+    border-radius: 10px;
+
+  
+}

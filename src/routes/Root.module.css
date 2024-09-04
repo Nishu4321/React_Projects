@@ -1,0 +1,15 @@
+.navbar{
+    max-height: "70px";
+    width: "100%";
+    background-color: black;
+}
+
+
+.navbar ul{
+    display: flex;
+    gap: 10px;
+}
+
+.navbar ul li{
+    color: rgb(243, 233, 233);
+}
