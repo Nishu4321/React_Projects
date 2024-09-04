@@ -89,6 +89,14 @@ export default function Root() {
                 Material-UI
               </Link>
             </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/Api"}
+              >
+                Fetching API
+              </Link>
+            </li>
           </ul>
         </nav>
         <Outlet />
