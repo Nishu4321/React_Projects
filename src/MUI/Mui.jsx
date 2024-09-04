@@ -14,6 +14,7 @@ import LoadingButtonsTransition from "./components/Buttons/LoadingButtonsTransit
 import BasicButtonGroup from "./components/ButtonGroup/BasicButtonGroup";
 import GroupSizesColors from "./components/ButtonGroup/GroupSizesColors";
 import GroupOrientation from "./components/ButtonGroup/VerticalButton";
+import CheckboxLabels from "./components/CheckBox/CheckboxLabels";
 
 const Mui = () => {
   return (
@@ -36,6 +37,9 @@ const Mui = () => {
         <BasicButtonGroup />
         <GroupSizesColors />
         <GroupOrientation />
+
+        {/* checkBox */}
+        <CheckboxLabels />
       </div>
     </>
   );
