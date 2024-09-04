@@ -93,14 +93,14 @@ export default function CheckboxLabels() {
 //   );
 // }
 
-//Controlled checkbox(error)
+//Controlled checkbox
 // import * as React from "react";
 // import Checkbox from "@mui/material/Checkbox";
 
 // export default function ControlledCheckbox() {
 //   const [checked, setChecked] = React.useState(true);
 
-//   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+//   const handleChange = (event) => {
 //     setChecked(event.target.checked);
 //   };
 
@@ -113,7 +113,7 @@ export default function CheckboxLabels() {
 //   );
 // }
 
-//indeterminate chexkbox(error)
+//indeterminate chexkbox
 // import * as React from "react";
 // import Box from "@mui/material/Box";
 // import Checkbox from "@mui/material/Checkbox";
@@ -122,15 +122,15 @@ export default function CheckboxLabels() {
 // export default function IndeterminateCheckbox() {
 //   const [checked, setChecked] = React.useState([true, false]);
 
-//   const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
+//   const handleChange1 = (event) => {
 //     setChecked([event.target.checked, event.target.checked]);
 //   };
 
-//   const handleChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+//   const handleChange2 = (event) => {
 //     setChecked([event.target.checked, checked[1]]);
 //   };
 
-//   const handleChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {
+//   const handleChange3 = (event) => {
 //     setChecked([checked[0], event.target.checked]);
 //   };
 
@@ -164,7 +164,7 @@ export default function CheckboxLabels() {
 //   );
 // }
 
-//formGroup(error)
+//formGroup
 // import * as React from "react";
 // import Box from "@mui/material/Box";
 // import FormLabel from "@mui/material/FormLabel";
@@ -181,7 +181,7 @@ export default function CheckboxLabels() {
 //     antoine: false,
 //   });
 
-//   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+//   const handleChange = (event) => {
 //     setState({
 //       ...state,
 //       [event.target.name]: event.target.checked,

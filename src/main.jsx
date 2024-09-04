@@ -13,6 +13,7 @@ import Rock from "./RockPaSc/Rock.jsx";
 import ToDoList from "./ToDoList/ToDoList.jsx";
 import ShoppingCart from "./ShoppingCart/ShoppingCart.jsx";
 import Mui from "./MUI/Mui.jsx";
+import FetchApi from "./FetchApi/FetchApi.jsx";
 
 function ErrorPage(params) {
   return <div>Error</div>;
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "Mui",
         element: <Mui />,
+      },
+      {
+        path: "FetchApi",
+        element: <FetchApi />,
       },
       /* the rest of the routes */
     ],

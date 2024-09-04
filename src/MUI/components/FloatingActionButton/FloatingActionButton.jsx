@@ -26,7 +26,7 @@ export default function FloatingActionButtons() {
   );
 }
 
-//sixe of button
+//size of button
 //By default, the size is large. Use the size prop for smaller floating action buttons.
 // import * as React from "react";
 // import Box from "@mui/material/Box";
@@ -54,29 +54,22 @@ export default function FloatingActionButtons() {
 // A floating action button that spans multiple lateral screens (such as tabbed screens) should briefly disappear, then reappear if its action changes.
 // The Zoom transition can be used to achieve this. Note that since both the exiting and entering animations are triggered at the same time, we use enterDelay to allow the outgoing Floating Action Button's animation to finish before the new one enters.
 
-// import * as React from 'react';
-// import { useTheme } from '@mui/material/styles';
-// import AppBar from '@mui/material/AppBar';
-// import Tabs from '@mui/material/Tabs';
-// import Tab from '@mui/material/Tab';
-// import Typography from '@mui/material/Typography';
-// import Zoom from '@mui/material/Zoom';
-// import Fab from '@mui/material/Fab';
-// import AddIcon from '@mui/icons-material/Add';
-// import EditIcon from '@mui/icons-material/Edit';
-// import UpIcon from '@mui/icons-material/KeyboardArrowUp';
-// import { green } from '@mui/material/colors';
-// import Box from '@mui/material/Box';
-// import { SxProps } from '@mui/system';
+// import * as React from "react";
+// import PropTypes from "prop-types";
+// import { useTheme } from "@mui/material/styles";
+// import AppBar from "@mui/material/AppBar";
+// import Tabs from "@mui/material/Tabs";
+// import Tab from "@mui/material/Tab";
+// import Typography from "@mui/material/Typography";
+// import Zoom from "@mui/material/Zoom";
+// import Fab from "@mui/material/Fab";
+// import AddIcon from "@mui/icons-material/Add";
+// import EditIcon from "@mui/icons-material/Edit";
+// import UpIcon from "@mui/icons-material/KeyboardArrowUp";
+// import { green } from "@mui/material/colors";
+// import Box from "@mui/material/Box";
 
-// interface TabPanelProps {
-//   children?: React.ReactNode;
-//   dir?: string;
-//   index: number;
-//   value: number;
-// }
-
-// function TabPanel(props: TabPanelProps) {
+// function TabPanel(props) {
 //   const { children, value, index, ...other } = props;
 
 //   return (
@@ -93,23 +86,29 @@ export default function FloatingActionButtons() {
 //   );
 // }
 
-// function a11yProps(index: any) {
+// TabPanel.propTypes = {
+//   children: PropTypes.node,
+//   index: PropTypes.number.isRequired,
+//   value: PropTypes.number.isRequired,
+// };
+
+// function a11yProps(index) {
 //   return {
 //     id: `action-tab-${index}`,
-//     'aria-controls': `action-tabpanel-${index}`,
+//     "aria-controls": `action-tabpanel-${index}`,
 //   };
 // }
 
 // const fabStyle = {
-//   position: 'absolute',
+//   position: "absolute",
 //   bottom: 16,
 //   right: 16,
 // };
 
 // const fabGreenStyle = {
-//   color: 'common.white',
+//   color: "common.white",
 //   bgcolor: green[500],
-//   '&:hover': {
+//   "&:hover": {
 //     bgcolor: green[600],
 //   },
 // };
@@ -118,7 +117,7 @@ export default function FloatingActionButtons() {
 //   const theme = useTheme();
 //   const [value, setValue] = React.useState(0);
 
-//   const handleChange = (event: unknown, newValue: number) => {
+//   const handleChange = (event, newValue) => {
 //     setValue(newValue);
 //   };
 
@@ -129,31 +128,31 @@ export default function FloatingActionButtons() {
 
 //   const fabs = [
 //     {
-//       color: 'primary' as 'primary',
-//       sx: fabStyle as SxProps,
+//       color: "primary",
+//       sx: fabStyle,
 //       icon: <AddIcon />,
-//       label: 'Add',
+//       label: "Add",
 //     },
 //     {
-//       color: 'secondary' as 'secondary',
-//       sx: fabStyle as SxProps,
+//       color: "secondary",
+//       sx: fabStyle,
 //       icon: <EditIcon />,
-//       label: 'Edit',
+//       label: "Edit",
 //     },
 //     {
-//       color: 'inherit' as 'inherit',
-//       sx: { ...fabStyle, ...fabGreenStyle } as SxProps,
+//       color: "inherit",
+//       sx: { ...fabStyle, ...fabGreenStyle },
 //       icon: <UpIcon />,
-//       label: 'Expand',
+//       label: "Expand",
 //     },
 //   ];
 
 //   return (
 //     <Box
 //       sx={{
-//         bgcolor: 'background.paper',
+//         bgcolor: "background.paper",
 //         width: 500,
-//         position: 'relative',
+//         position: "relative",
 //         minHeight: 200,
 //       }}
 //     >
@@ -186,7 +185,9 @@ export default function FloatingActionButtons() {
 //           in={value === index}
 //           timeout={transitionDuration}
 //           style={{
-//             transitionDelay: `${value === index ? transitionDuration.exit : 0}ms`,
+//             transitionDelay: `${
+//               value === index ? transitionDuration.exit : 0
+//             }ms`,
 //           }}
 //           unmountOnExit
 //         >

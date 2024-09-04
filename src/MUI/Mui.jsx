@@ -16,6 +16,11 @@ import GroupSizesColors from "./components/ButtonGroup/GroupSizesColors";
 import GroupOrientation from "./components/ButtonGroup/VerticalButton";
 import CheckboxLabels from "./components/CheckBox/CheckboxLabels";
 import FloatingActionButtons from "./components/FloatingActionButton/FloatingActionButton";
+import ToggleButtons from "./components/ToggleButton/ToggleButton";
+import RadioButtonsGroup from "./components/Radio/Radio";
+import BasicRating from "./components/Ratings/BasicRating";
+import BasicSelect from "./components/Select/Select";
+import BasicTextFields from "./components/TextField/TextField";
 
 const Mui = () => {
   return (
@@ -43,6 +48,11 @@ const Mui = () => {
         <CheckboxLabels />
 
         <FloatingActionButtons />
+        <ToggleButtons />
+        <RadioButtonsGroup />
+        <BasicRating />
+        <BasicSelect />
+        <BasicTextFields />
       </div>
     </>
   );
