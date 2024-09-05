@@ -47,21 +47,22 @@
     width: 82px;
     font-weight: 400;
     border-radius: 5px;
-    margin-left: 6px;
+    /* margin-left: 60px; */
     cursor: pointer;
     
 }
 
 .data{
-    background-color: floralwhite;
+    background-color: rgb(247, 242, 242);
     display: flex;
+
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 90%;
     padding: 0 10px;
    border: 2px solid black;
    border-radius: 5px;
-   height: 66px;
+   height: 125px;
    margin-top: 10px;
   
    
@@ -83,7 +84,7 @@
 
 .datadiv{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     padding-top: 20px;
     /* background-color: red; */
     height: 75vh;
@@ -91,6 +92,17 @@
     border: 2px solid black;
     /* margin: 10px 257px; */
     border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
 
   
+}
+
+.input_data{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    margin-right: 13px;
+    gap:15px;
+    
 }
