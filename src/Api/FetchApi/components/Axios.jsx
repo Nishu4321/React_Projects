@@ -1,25 +1,31 @@
 import { useEffect, useState } from "react";
+import CardAxios from "./CardAxios";
 import axios from "axios";
 const Axios = () => {
-  const [meals, setMeals] = useState([]);
+  const [weathers, setWeathers] = useState([]);
   useEffect(() => {
-    axios
-      .get("https://www.themealdb.com/api/json/v1/1/random.php")
-      .then((res) => {
-        setMeals(res.data.meals);
-      });
+    axios.get("https://freetestapi.com/api/v1/weathers").then((res) => {
+      setWeathers(res.data);
+    });
   }, []);
 
   return (
     <div>
-      {meals.map((meal) => (
-        <img
-          key={meal.idMeal}
-          src={meal.strMealThumb}
-          alt={meal.strMeal}
-          width={400}
-        />
-      ))}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "20px",
+          margin: "20px 0px",
+        }}
+      >
+        {weathers.map((weather) => (
+          <div key={weather.id}>
+            <CardAxios weathers={weather} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
