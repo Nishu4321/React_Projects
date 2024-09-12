@@ -14,6 +14,7 @@ import ToDoList from "./ToDoList/ToDoList.jsx";
 import ShoppingCart from "./ShoppingCart/ShoppingCart.jsx";
 import Mui from "./MUI/Mui.jsx";
 import Api from "./Api/Api.jsx";
+import ServerApi from "./Server/ServerApi.jsx";
 
 function ErrorPage(params) {
   return <div>Error</div>;
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "Api",
         element: <Api />,
+      },
+      {
+        path: "ServerApi",
+        element: <ServerApi />,
       },
       /* the rest of the routes */
     ],

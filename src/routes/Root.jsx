@@ -97,6 +97,14 @@ export default function Root() {
                 Fetching API
               </Link>
             </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/ServerApi"}
+              >
+                ServerApi
+              </Link>
+            </li>
           </ul>
         </nav>
         <Outlet />
