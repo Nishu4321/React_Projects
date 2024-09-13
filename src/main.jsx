@@ -15,6 +15,9 @@ import ShoppingCart from "./ShoppingCart/ShoppingCart.jsx";
 import Mui from "./MUI/Mui.jsx";
 import Api from "./Api/Api.jsx";
 import ServerApi from "./Server/ServerApi.jsx";
+import E_Commerce from "./E_Commerce/E_Commerce.jsx";
+import Cart from "./E_Commerce/pages/Cart/Cart.jsx";
+import ShopContextProvider from "./E_Commerce/context/ShopContextProvider.jsx";
 
 function ErrorPage(params) {
   return <div>Error</div>;
@@ -76,6 +79,14 @@ const router = createBrowserRouter([
         path: "ServerApi",
         element: <ServerApi />,
       },
+      {
+        path: "/E_Commerce",
+        element: <E_Commerce />,
+      },
+      {
+        path: "/E_Commerce/Cart",
+        element: <Cart />,
+      },
       /* the rest of the routes */
     ],
   },
@@ -83,6 +94,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ShopContextProvider>
+      <RouterProvider router={router} />
+    </ShopContextProvider>
   </StrictMode>
 );

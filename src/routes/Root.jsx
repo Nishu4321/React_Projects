@@ -105,6 +105,14 @@ export default function Root() {
                 ServerApi
               </Link>
             </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/E_Commerce"}
+              >
+                E-Commerce
+              </Link>
+            </li>
           </ul>
         </nav>
         <Outlet />
