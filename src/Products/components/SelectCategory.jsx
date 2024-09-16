@@ -40,7 +40,7 @@ const SelectCategory = ({ addProductToCartFunction }) => {
             <p>${item.price}</p>
             <p>{item.description}</p>
             <p>{item.category}</p>
-            <button onClick={() => addProductToCartFunction(product)}>
+            <button onClick={() => addProductToCartFunction(item)}>
               Add to Cart
             </button>
             <br></br>

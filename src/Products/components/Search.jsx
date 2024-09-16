@@ -3,7 +3,11 @@ import styles from "./Search.module.css";
 import SelectCategory from "./SelectCategory";
 import DisplayItems from "./DisplayItems";
 
-const Search = ({ searchProducts, productSearchUser }) => {
+const Search = ({
+  searchProducts,
+  productSearchUser,
+  addProductToCartFunction,
+}) => {
   const [categorys, setCategory] = useState([]);
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/categories")
@@ -29,8 +33,8 @@ const Search = ({ searchProducts, productSearchUser }) => {
         />
       </div>
       <div>
-        <SelectCategory />
-        <DisplayItems />
+        <SelectCategory addProductToCartFunction={addProductToCartFunction} />
+        <DisplayItems addProductToCartFunction={addProductToCartFunction} />
       </div>
     </header>
   );

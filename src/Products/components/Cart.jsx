@@ -12,7 +12,7 @@ const Cart = ({
       <div className={`${styles.maindiv}`}>
         <div className={`${styles.cart}`}>
           <h2>My Cart</h2>
-          {cartProducts.lenght === 0 ? (
+          {cartProducts.length === 0 ? (
             <h5>Your Cart is Empty</h5>
           ) : (
             <div>

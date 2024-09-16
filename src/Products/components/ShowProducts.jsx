@@ -4,7 +4,7 @@ import styles from "./ShowProducts.module.css";
 const ShowProducts = ({
   filterProductFunction,
   Products,
-  addToCart,
+
   addProductToCartFunction,
 }) => {
   return (
