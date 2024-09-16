@@ -113,6 +113,14 @@ export default function Root() {
                 E-Commerce
               </Link>
             </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/Products"}
+              >
+                API-Products
+              </Link>
+            </li>
           </ul>
         </nav>
         <Outlet />

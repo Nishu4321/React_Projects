@@ -18,6 +18,7 @@ import ServerApi from "./Server/ServerApi.jsx";
 import E_Commerce from "./E_Commerce/E_Commerce.jsx";
 import Cart from "./E_Commerce/pages/Cart/Cart.jsx";
 import ShopContextProvider from "./E_Commerce/context/ShopContextProvider.jsx";
+import Products from "./Products/Products.jsx";
 
 function ErrorPage(params) {
   return <div>Error</div>;
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: "/E_Commerce/Cart",
         element: <Cart />,
+      },
+      {
+        path: "Products",
+        element: <Products />,
       },
       /* the rest of the routes */
     ],
