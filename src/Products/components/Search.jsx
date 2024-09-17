@@ -7,19 +7,20 @@ const Search = ({
   searchProducts,
   productSearchUser,
   addProductToCartFunction,
+  setProducts,
+  products,
 }) => {
-  const [categorys, setCategory] = useState([]);
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/categories")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        // console.log(data);
-        setCategory(data);
-      });
-  }, []);
-  console.log(categorys);
+  // const [categorys, setCategory] = useState([]);
+  // useEffect(() => {
+  //   fetch("https://fakestoreapi.com/products/categories")
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       // console.log(data);
+  //       setCategory(data);
+  //     });
+  // }, []);
 
   return (
     <header className={`${styles.Products_header}`}>
@@ -27,14 +28,22 @@ const Search = ({
       <div className={`${styles.Products_searchbar}`}>
         <input
           type="text"
-          placeholder="Serach for Products..."
+          placeholder="Search for Products..."
           value={searchProducts}
           onChange={productSearchUser}
         />
       </div>
-      <div>
-        <SelectCategory addProductToCartFunction={addProductToCartFunction} />
-        <DisplayItems addProductToCartFunction={addProductToCartFunction} />
+      <div className={`${styles.Products_selecAnddis}`}>
+        <SelectCategory
+          addProductToCartFunction={addProductToCartFunction}
+          products={products}
+          setProducts={setProducts}
+        />
+        <DisplayItems
+          addProductToCartFunction={addProductToCartFunction}
+          products={products}
+          setProducts={setProducts}
+        />
       </div>
     </header>
   );

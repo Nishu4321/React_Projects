@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./DisplayItems.module.css";
+import SelectCategory from "./SelectCategory";
 
-const DisplayItems = ({ addProductToCartFunction }) => {
+const DisplayItems = ({ addProductToCartFunction, products, setProducts }) => {
   const [numOfItems, setNumOfItems] = useState("");
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products?limit=${numOfItems}`)
@@ -11,13 +12,16 @@ const DisplayItems = ({ addProductToCartFunction }) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
-        setItems(data);
+        // console.log(data);
+        setProducts(data);
       });
   }, [numOfItems]);
+
+  // console.log(products);
+
   const handleCategoryChange = (event) => {
     setNumOfItems(event.target.value);
-    console.log(numOfItems);
+    // console.log(numOfItems);
   };
 
   return (
@@ -25,7 +29,7 @@ const DisplayItems = ({ addProductToCartFunction }) => {
       <div>
         <label>Number of items to display</label>
         <select onChange={handleCategoryChange} value={numOfItems}>
-          <option value="0">0</option>
+          <option value={products}>0</option>
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="15">15</option>
@@ -33,7 +37,7 @@ const DisplayItems = ({ addProductToCartFunction }) => {
         </select>
 
         <div className={`${styles.display_list}`}>
-          {items.map((item) => (
+          {products.map((item) => (
             <div className={`${styles.dispaly_item}`} key={item.id}>
               <h2>{item.category}</h2>
               <h2>{item.title}</h2>

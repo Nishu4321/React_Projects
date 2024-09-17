@@ -41,11 +41,23 @@ const Products = () => {
       );
       setCartProducts(latestProduct);
     } else {
-      setCartProducts([...cartProducts, { title: product, quantity: 1 }]);
+      setCartProducts([...cartProducts, { product: product, quantity: 1 }]);
     }
   };
 
-  const deleteProductFromCartFunction = () => {};
+  const deleteProductFromCartFunction = (product) => {
+    const updateCart = cartProducts.filter(
+      (item) => item.product.id !== product.id
+    );
+    setCartProducts(updateCart);
+  };
+
+  const totalAmountCalculationFunction = () => {
+    return cartProducts.reduce(
+      (total, item) => total + item.product.price * item.quantity,
+      0
+    );
+  };
 
   return (
     <div>
@@ -54,6 +66,8 @@ const Products = () => {
           searchProducts={searchProducts}
           productSearchUser={productSearchUser}
           addProductToCartFunction={addProductToCartFunction}
+          products={products}
+          setProducts={setProducts}
         />
 
         <div className={`${styles.ShowProducts}`}>
@@ -68,6 +82,7 @@ const Products = () => {
             cartProducts={cartProducts}
             setCartProducts={setCartProducts}
             deleteProductFromCartFunction={deleteProductFromCartFunction}
+            totalAmountCalculationFunction={totalAmountCalculationFunction}
           />
         </div>
       </div>

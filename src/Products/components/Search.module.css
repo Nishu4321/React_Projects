@@ -33,3 +33,12 @@
     outline: none;
     background-color: #ffffff;
 }
+
+.Products_selecAnddis{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}

@@ -4,7 +4,7 @@ import styles from "./Cart.module.css";
 const Cart = ({
   cartProducts,
   setCartProducts,
-
+  totalAmountCalculationFunction,
   deleteProductFromCartFunction,
 }) => {
   return (
@@ -17,7 +17,7 @@ const Cart = ({
           ) : (
             <div>
               <ul>
-                {cartProducts.map((product) => (
+                {cartProducts.map(({ product }) => (
                   <li key={product.id}>
                     <div>
                       <div className={`${styles.item_info}`}>
@@ -97,10 +97,10 @@ const Cart = ({
                 </div>
                 <button
                   className={`${styles.checkout_button}`}
-                  //   disabled={
-                  //     cartCourses.length === 0 ||
-                  //     totalAmountCalculationFunction() === 0
-                  //   }
+                  // disabled={
+                  //   cartProducts.length === 0 ||
+                  //   totalAmountCalculationFunction() === 0
+                  // }
                 >
                   Proceed to Payment
                 </button>

@@ -3,10 +3,10 @@ import styles from "./ShowProducts.module.css";
 
 const ShowProducts = ({
   filterProductFunction,
-  Products,
 
   addProductToCartFunction,
 }) => {
+  console.log(filterProductFunction);
   return (
     <>
       <div className={`${styles.product_list}`}>

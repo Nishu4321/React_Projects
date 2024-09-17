@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./SelectCategory.module.css";
 
-const SelectCategory = ({ addProductToCartFunction }) => {
+const SelectCategory = ({
+  addProductToCartFunction,
+  products,
+  setProducts,
+}) => {
   const [selectedCategory, setSelectedCategory] = useState();
-  const [items, setItems] = useState([]);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${selectedCategory}`)
@@ -12,9 +15,10 @@ const SelectCategory = ({ addProductToCartFunction }) => {
       })
       .then((data) => {
         // console.log(data);
-        setItems(data);
+        setProducts(data);
       });
   }, [selectedCategory]);
+  // console.log(products);
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -25,6 +29,7 @@ const SelectCategory = ({ addProductToCartFunction }) => {
     <div>
       <label>Category:</label>
       <select onChange={handleCategoryChange} value={selectedCategory}>
+        <option value={products}>All</option>
         <option value="men's clothing">Men's</option>
         <option value="women's clothing">Women's</option>
         <option value="electronics">Electronic</option>
@@ -32,7 +37,7 @@ const SelectCategory = ({ addProductToCartFunction }) => {
       </select>
 
       <div className={`${styles.item_list}`}>
-        {items.map((item) => (
+        {products.map((item) => (
           <div className={`${styles.item}`} key={item.id}>
             <h2>{item.category}</h2>
             <h2>{item.title}</h2>
