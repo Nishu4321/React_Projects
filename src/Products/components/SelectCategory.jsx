@@ -29,7 +29,7 @@ const SelectCategory = ({
     <div>
       <label>Category:</label>
       <select onChange={handleCategoryChange} value={selectedCategory}>
-        <option value={products}>All</option>
+        <option value={products}>None</option>
         <option value="men's clothing">Men's</option>
         <option value="women's clothing">Women's</option>
         <option value="electronics">Electronic</option>

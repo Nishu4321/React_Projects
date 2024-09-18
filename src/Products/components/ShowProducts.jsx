@@ -6,7 +6,7 @@ const ShowProducts = ({
 
   addProductToCartFunction,
 }) => {
-  console.log(filterProductFunction);
+  // console.log(filterProductFunction);
   return (
     <>
       <div className={`${styles.product_list}`}>

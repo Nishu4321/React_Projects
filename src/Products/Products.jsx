@@ -6,6 +6,7 @@ import Cart from "./components/Cart";
 
 const Products = () => {
   const [searchProducts, setSearchProducts] = useState("");
+  const [compareProducts, setCompareProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
 
@@ -16,11 +17,11 @@ const Products = () => {
       })
       .then((data) => {
         // console.log(data);
-        setProducts(data);
+        setCompareProducts(data);
       });
   }, []);
 
-  const filterProductFunction = products.filter((product) =>
+  const filterProductFunction = compareProducts.filter((product) =>
     product.title.toLowerCase().includes(searchProducts.toLowerCase())
   );
 
@@ -29,10 +30,12 @@ const Products = () => {
   };
 
   const addProductToCartFunction = (product) => {
-    const alreadyProduct = cartProducts.find((item) => item.id === product.id);
+    const alreadyProduct = cartProducts.find(
+      (item) => item.product.id === product.id
+    );
     if (alreadyProduct) {
       const latestProduct = cartProducts.map((item) =>
-        item.id === product.id
+        item.product.id === product.id
           ? {
               ...item,
               quantity: item.quantity + 1,
@@ -72,7 +75,6 @@ const Products = () => {
 
         <div className={`${styles.ShowProducts}`}>
           <ShowProducts
-            products={products}
             filterProductFunction={filterProductFunction}
             addProductToCartFunction={addProductToCartFunction}
           />

@@ -64,7 +64,9 @@ function UserCart({
                           >
                             +
                           </button>
-                          <p className={`${styles.quant}`}>{item.quantity} </p>
+                          <p className={`${styles.quant}`}>
+                            {product.quantity}{" "}
+                          </p>
                           <button
                             onClick={(e) => {
                               setCartCourses((prevCartCourses) => {

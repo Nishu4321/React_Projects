@@ -17,16 +17,16 @@ const Cart = ({
           ) : (
             <div>
               <ul>
-                {cartProducts.map(({ product }) => (
-                  <li key={product.id}>
+                {cartProducts.map((item) => (
+                  <li key={item.product.id}>
                     <div>
                       <div className={`${styles.item_info}`}>
-                        <div>
-                          <img src={product.image} alt="image" />
+                        <div className={`${styles.item_img}`}>
+                          <img src={item.product.image} alt="image" />
                         </div>
                         <div className={`${styles.item_details}`}>
-                          <h3>{product.title}</h3>
-                          <p>Price ${product.price}</p>
+                          <h3>{item.product.title}</h3>
+                          <p>Price ${item.product.price}</p>
                         </div>
                       </div>
                       <div>
@@ -34,7 +34,7 @@ const Cart = ({
                           <button
                             className={`${styles.remove_button}`}
                             onClick={() =>
-                              deleteProductFromCartFunction(product.id)
+                              deleteProductFromCartFunction(item.product)
                             }
                           >
                             Remove Product
@@ -45,10 +45,10 @@ const Cart = ({
                                 setCartProducts((preCartProduct) => {
                                   const updateCart = preCartProduct.map(
                                     (prevItem) =>
-                                      prevItem.id === product.id
+                                      prevItem.product.id === item.product.id
                                         ? {
                                             ...prevItem,
-                                            quantity: product.quantity + 1,
+                                            quantity: item.quantity + 1,
                                           }
                                         : prevItem
                                   );
@@ -58,19 +58,17 @@ const Cart = ({
                             >
                               +
                             </button>
-                            <p className={`${styles.quant}`}>
-                              {product.quantity}
-                            </p>
+                            <p className={`${styles.quant}`}>{item.quantity}</p>
                             <button
                               onClick={(e) => {
                                 setCartProducts((preCartProduct) => {
                                   const updateCart = preCartProduct.map(
                                     (prevItem) =>
-                                      prevItem.id === product.id
+                                      prevItem.product.id === item.product.id
                                         ? {
                                             ...prevItem,
                                             quantity: Math.max(
-                                              product.quantity - 1,
+                                              item.quantity - 1,
                                               0
                                             ),
                                           }
@@ -92,15 +90,15 @@ const Cart = ({
               <div className={`${styles.checkout_section}`}>
                 <div className={`${styles.chechout_total}`}>
                   <p className={`${styles.total}`}>
-                    {/* Total Amount: {totalAmountCalculationFunction()} */}
+                    Total Amount: {totalAmountCalculationFunction()}
                   </p>
                 </div>
                 <button
                   className={`${styles.checkout_button}`}
-                  // disabled={
-                  //   cartProducts.length === 0 ||
-                  //   totalAmountCalculationFunction() === 0
-                  // }
+                  disabled={
+                    cartProducts.length === 0 ||
+                    totalAmountCalculationFunction() === 0
+                  }
                 >
                   Proceed to Payment
                 </button>

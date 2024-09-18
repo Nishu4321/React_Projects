@@ -36,7 +36,7 @@ const DisplayItems = ({ addProductToCartFunction, products, setProducts }) => {
           <option value="20">20</option>
         </select>
 
-        <div className={`${styles.display_list}`}>
+        {/* <div className={`${styles.display_list}`}>
           {products.map((item) => (
             <div className={`${styles.dispaly_item}`} key={item.id}>
               <h2>{item.category}</h2>
@@ -50,7 +50,7 @@ const DisplayItems = ({ addProductToCartFunction, products, setProducts }) => {
               </button>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </>
   );
