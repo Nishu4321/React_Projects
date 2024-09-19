@@ -6,7 +6,7 @@ import Cart from "./components/Cart";
 
 const Products = () => {
   const [searchProducts, setSearchProducts] = useState("");
-  const [compareProducts, setCompareProducts] = useState([]);
+  // const [compareProducts, setCompareProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
 
@@ -16,12 +16,12 @@ const Products = () => {
         return res.json();
       })
       .then((data) => {
-        // console.log(data);
-        setCompareProducts(data);
+        setProducts(data);
       });
   }, []);
+  console.log(products);
 
-  const filterProductFunction = compareProducts.filter((product) =>
+  const filterProductFunction = products.filter((product) =>
     product.title.toLowerCase().includes(searchProducts.toLowerCase())
   );
 
@@ -75,6 +75,7 @@ const Products = () => {
 
         <div className={`${styles.ShowProducts}`}>
           <ShowProducts
+            products={products}
             filterProductFunction={filterProductFunction}
             addProductToCartFunction={addProductToCartFunction}
           />

@@ -29,11 +29,11 @@ const Search = ({
             products={products}
             setProducts={setProducts}
           />
-          <DisplayItems
+          {/* <DisplayItems
             addProductToCartFunction={addProductToCartFunction}
             products={products}
             setProducts={setProducts}
-          />
+          /> */}
         </div>
       </header>
     </>

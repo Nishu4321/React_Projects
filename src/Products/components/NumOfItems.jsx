@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const NumOfItems = ({ selectedCategory }) => {
+const NumOfItems = ({ selectedCategory, setProducts }) => {
   const [numOfItem, setNumOfItem] = useState();
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const NumOfItems = ({ selectedCategory }) => {
       })
       .then((data) => {
         // console.log(data);
-        setNumOfItem(data);
+        setProducts(data);
       });
   }, [numOfItem]);
 
@@ -22,7 +22,7 @@ const NumOfItems = ({ selectedCategory }) => {
   return (
     <>
       <div>
-        <label>Number of items to display</label>
+        <label>Number of items of category to display</label>
         <select onChange={handleNumChange} value={numOfItem}>
           <option>0</option>
           <option value="5">5</option>

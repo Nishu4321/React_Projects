@@ -7,53 +7,81 @@ const SelectCategory = ({
   products,
   setProducts,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState();
-
+  const [categoryList, setCategoryList] = useState([]);
+  const [categorySelect, setcategorySelect] = useState("");
+  const [numOfItems, setNumOfItems] = useState("None");
   useEffect(() => {
+    fetch(`https://fakestoreapi.com/products/categories`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setCategoryList(data);
+      });
+  }, []);
+  // console.log(products);
+
+  const handleCategoryChange = (event) => {
+    setcategorySelect(event.target.value);
+    getCategory(event.target.value);
+    setNumOfItems("None");
+    // console.log(selectedCategory);
+  };
+
+  function getCategory(selectedCategory) {
     fetch(`https://fakestoreapi.com/products/category/${selectedCategory}`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setProducts(data);
       });
-  }, [selectedCategory]);
-  // console.log(products);
+  }
 
-  const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
-    console.log(selectedCategory);
-  };
+  function handleNumberChange(event) {
+    setNumOfItems(event.target.value);
+    getNumberOfItems(event.target.value);
+  }
+
+  function getNumberOfItems(numofitems) {
+    fetch(
+      `https://fakestoreapi.com/products/category/${categorySelect}?limit=${numofitems}`
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setProducts(data);
+      });
+  }
 
   return (
     <div>
       <label>Category:</label>
-      <select onChange={handleCategoryChange} value={selectedCategory}>
-        <option value={products}>None</option>
-        <option value="men's clothing">Men's</option>
-        <option value="women's clothing">Women's</option>
-        <option value="electronics">Electronic</option>
-        <option value="jewelery">Jewelery</option>
+      <select onChange={handleCategoryChange} value={categorySelect}>
+        <option value={"None"}>None</option>
+        {categoryList.map((category) => {
+          return <option value={category}>{category}</option>;
+        })}
       </select>
-      <NumOfItems selectedCategory={selectedCategory} />
 
-      <div className={`${styles.item_list}`}>
-        {products.map((item) => (
-          <div className={`${styles.item}`} key={item.id}>
-            <h2>{item.category}</h2>
-            <h2>{item.title}</h2>
-            <img src={item.image} alt="image" />
-            <p>${item.price}</p>
-            <p>{item.description}</p>
-            <p>{item.category}</p>
-            <button onClick={() => addProductToCartFunction(item)}>
-              Add to Cart
-            </button>
-            <br></br>
-          </div>
-        ))}
+      <div>
+        <label>Number of items to display</label>
+        <select onChange={handleNumberChange} value={numOfItems}>
+          <option value={"None"}>None</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
       </div>
+      {/* <NumOfItems
+        selectedCategory={selectedCategory}
+        setProducts={setProducts}
+      /> */}
     </div>
   );
 };

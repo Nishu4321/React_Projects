@@ -3,10 +3,11 @@ import styles from "./ShowProducts.module.css";
 
 const ShowProducts = ({
   filterProductFunction,
-
+  products,
   addProductToCartFunction,
 }) => {
   // console.log(filterProductFunction);
+  // console.log(products);
   return (
     <>
       <div className={`${styles.product_list}`}>
@@ -15,7 +16,7 @@ const ShowProducts = ({
             Sorry, No mathcing Product Found.
           </p>
         ) : (
-          filterProductFunction.map((product) => (
+          products.map((product) => (
             <div className={`${styles.product}`} key={product.id}>
               <h2>{product.category}</h2>
               <h2>{product.title}</h2>
