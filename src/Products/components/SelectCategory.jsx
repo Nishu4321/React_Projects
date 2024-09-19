@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./SelectCategory.module.css";
+import NumOfItems from "./NumOfItems";
 
 const SelectCategory = ({
   addProductToCartFunction,
@@ -22,7 +23,7 @@ const SelectCategory = ({
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
-    // console.log(selectedCategory);
+    console.log(selectedCategory);
   };
 
   return (
@@ -35,6 +36,7 @@ const SelectCategory = ({
         <option value="electronics">Electronic</option>
         <option value="jewelery">Jewelery</option>
       </select>
+      <NumOfItems selectedCategory={selectedCategory} />
 
       <div className={`${styles.item_list}`}>
         {products.map((item) => (

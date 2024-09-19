@@ -21,7 +21,7 @@ const DisplayItems = ({ addProductToCartFunction, products, setProducts }) => {
 
   const handleCategoryChange = (event) => {
     setNumOfItems(event.target.value);
-    // console.log(numOfItems);
+    console.log(numOfItems);
   };
 
   return (
