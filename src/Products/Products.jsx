@@ -19,7 +19,7 @@ const Products = () => {
         setProducts(data);
       });
   }, []);
-  console.log(products);
+  // console.log(products);
 
   const filterProductFunction = products.filter((product) =>
     product.title.toLowerCase().includes(searchProducts.toLowerCase())

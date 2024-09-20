@@ -2,21 +2,18 @@ import React, { useEffect, useState } from "react";
 import styles from "./SelectCategory.module.css";
 import NumOfItems from "./NumOfItems";
 
-const SelectCategory = ({
-  addProductToCartFunction,
-  products,
-  setProducts,
-}) => {
+const SelectCategory = ({ products, setProducts }) => {
   const [categoryList, setCategoryList] = useState([]);
-  const [categorySelect, setcategorySelect] = useState("");
-  const [numOfItems, setNumOfItems] = useState("None");
+  const [categorySelect, setcategorySelect] = useState("None");
+  const [numOfItems, setNumOfItems] = useState("");
+
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/categories`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setCategoryList(data);
       });
   }, []);
@@ -30,14 +27,25 @@ const SelectCategory = ({
   };
 
   function getCategory(selectedCategory) {
-    fetch(`https://fakestoreapi.com/products/category/${selectedCategory}`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setProducts(data);
-      });
+    if (selectedCategory == "None") {
+      fetch(`https://fakestoreapi.com/products`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          // console.log(data);
+          setProducts(data);
+        });
+    } else {
+      fetch(`https://fakestoreapi.com/products/category/${selectedCategory}`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          // console.log(data);
+          setProducts(data);
+        });
+    }
   }
 
   function handleNumberChange(event) {
@@ -46,16 +54,27 @@ const SelectCategory = ({
   }
 
   function getNumberOfItems(numofitems) {
-    fetch(
-      `https://fakestoreapi.com/products/category/${categorySelect}?limit=${numofitems}`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setProducts(data);
-      });
+    if (categorySelect == "None") {
+      fetch(`https://fakestoreapi.com/products?limit=${numofitems}`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data);
+          setProducts(data);
+        });
+    } else {
+      fetch(
+        `https://fakestoreapi.com/products/category/${categorySelect}?limit=${numofitems}`
+      )
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data);
+          setProducts(data);
+        });
+    }
   }
 
   return (
