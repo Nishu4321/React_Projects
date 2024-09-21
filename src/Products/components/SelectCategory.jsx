@@ -27,25 +27,20 @@ const SelectCategory = ({ products, setProducts }) => {
   };
 
   function getCategory(selectedCategory) {
-    if (selectedCategory == "None") {
-      fetch(`https://fakestoreapi.com/products`)
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          // console.log(data);
-          setProducts(data);
-        });
-    } else {
-      fetch(`https://fakestoreapi.com/products/category/${selectedCategory}`)
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          // console.log(data);
-          setProducts(data);
-        });
+    let url = "https://fakestoreapi.com/products";
+
+    if (selectedCategory != "None") {
+      url = `https://fakestoreapi.com/products/category/${selectedCategory}`;
     }
+
+    fetch(url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        // console.log(data);
+        setProducts(data);
+      });
   }
 
   function handleNumberChange(event) {
