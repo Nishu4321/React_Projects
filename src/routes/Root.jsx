@@ -121,6 +121,14 @@ export default function Root() {
                 API-Products
               </Link>
             </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/QuizMain"}
+              >
+                Quiz App
+              </Link>
+            </li>
           </ul>
         </nav>
         <Outlet />
