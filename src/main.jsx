@@ -22,6 +22,8 @@ import Products from "./Products/Products.jsx";
 import QuizMain from "./Quiz App/QuizMain.jsx";
 import Form from "./Form/Form.jsx";
 import ImageSearchMain from "./ImageSearch/ImageSearchMain.jsx";
+import APOD from "./APOD_NASA/APOD.jsx";
+import Quality from "./Air_Quality/Quality.jsx";
 
 function ErrorPage(params) {
   return <div>Error</div>;
@@ -106,6 +108,14 @@ const router = createBrowserRouter([
       {
         path: "ImageSearchMain",
         element: <ImageSearchMain />,
+      },
+      {
+        path: "APOD",
+        element: <APOD />,
+      },
+      {
+        path: "Quality",
+        element: <Quality />,
       },
       /* the rest of the routes */
     ],

@@ -8,6 +8,7 @@
 .navbar ul{
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .navbar ul li{

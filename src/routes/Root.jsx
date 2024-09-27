@@ -145,6 +145,22 @@ export default function Root() {
                 ImageSearch
               </Link>
             </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/APOD"}
+              >
+                APOD-NASA
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/Quality"}
+              >
+                Air_Quality
+              </Link>
+            </li>
           </ul>
         </nav>
         <Outlet />

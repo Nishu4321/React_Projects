@@ -1,0 +1,26 @@
+.mainDiv{
+ 
+    background-color: antiquewhite
+  }
+  
+  .div1{
+  
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  background-color: rgb(176, 181, 179);
+  border-radius: 20px;
+  padding: 10px;
+  margin-left: 400px;
+  margin-right: 400px;
+  }
+  
+  .div2{
+    margin: 10px 20px;
+    background-color: rgb(176, 181, 179);
+    border-radius: 20px;
+    padding: 10px;
+  
+  }
