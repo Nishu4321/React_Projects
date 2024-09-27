@@ -1,0 +1,131 @@
+
+
+  
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-top: 50px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-top: var(--default-margin);
+    color: #151517;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .buttons .btn,
+  .buttons .btn:active,
+  .buttons .btn:focus {
+
+    box-shadow: none;
+    outline: none;
+    border: none;
+  }
+  
+  .error-msg {
+    color: #ff0000;
+    text-align: center;
+  }
+  
+  .loading {
+    color: #1b1b1d;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+
+  
+  .search_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    height: 50px;
+   
+  }
+  
+  .search_section .search_input {
+    min-width: 500px;
+  
+    height: 30px;
+   
+  }
+  
+
+  
+
+  
+  .filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  
+  }
+  
+  .filters > * {
+    padding: 5px 10px;
+    background: #121213;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  
+  .images {
+    margin-top: var(--medium-margin);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: var(--default-spacing);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .images .image {
+    width: 200px;
+    height: 200px;
+    justify-self: center;
+    align-self: center;
+    margin-left: 2rem;
+    border-radius: 10px;
+    transition: transform 0.5s;
+  }
+
+  
+  
+  .images .image:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* images section ends */
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .images {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search_section .search_input {
+      width: 100%;
+      min-width: unset;
+      margin: 0 var(--default-margin);
+    }
+  
+    .images {
+      grid-template-columns: 1fr;
+    }
+  }

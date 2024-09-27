@@ -137,6 +137,14 @@ export default function Root() {
                 Form
               </Link>
             </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/ImageSearchMain"}
+              >
+                ImageSearch
+              </Link>
+            </li>
           </ul>
         </nav>
         <Outlet />
