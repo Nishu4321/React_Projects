@@ -129,6 +129,14 @@ export default function Root() {
                 Quiz App
               </Link>
             </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/Form"}
+              >
+                Form
+              </Link>
+            </li>
           </ul>
         </nav>
         <Outlet />

@@ -4,7 +4,7 @@ const Input = ({ text, result }) => {
   return (
     <div className={`${style.input_wrapper}`}>
       <div className={`${style.result}`}>
-        <h1>r {result}</h1>
+        <h1>{result}</h1>
       </div>
 
       <div className={`${style.text}`}>

@@ -20,6 +20,7 @@ import Cart from "./E_Commerce/pages/Cart/Cart.jsx";
 import ShopContextProvider from "./E_Commerce/context/ShopContextProvider.jsx";
 import Products from "./Products/Products.jsx";
 import QuizMain from "./Quiz App/QuizMain.jsx";
+import Form from "./Form/Form.jsx";
 
 function ErrorPage(params) {
   return <div>Error</div>;
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
       {
         path: "QuizMain",
         element: <QuizMain />,
+      },
+      {
+        path: "Form",
+        element: <Form />,
       },
       /* the rest of the routes */
     ],
