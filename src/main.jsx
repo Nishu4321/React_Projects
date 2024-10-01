@@ -2,7 +2,11 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import Root from "./routes/Root.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import Calculator from "./Calculator/Calculator.jsx";
 import Calculator2 from "./Calculator2/Calculator2.jsx";
 import TicTacToe from "./TicTacToe/TicTacToe.jsx";
@@ -28,6 +32,9 @@ import Login from "./LogIn/Login.jsx";
 import SignUp from "./SignUp/SignUp.jsx";
 import LogOut from "./LogOut/LogOut.jsx";
 import ProtectedRouts from "./ProtectedRouts/ProtectedRouts.jsx";
+import LoginRoute from "./ProtectedRouts/LoginRoute.jsx";
+
+const isloggedin = localStorage.getItem("loggedin");
 
 function ErrorPage(params) {
   return <div>Error</div>;
@@ -40,15 +47,20 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
 
     children: [
-      { index: true, element: <Login /> },
+      {
+        index: true,
+        element: isloggedin ? <Calculator /> : <Login />,
+      },
 
+      // Unauthorized routes
       {
         path: "Login",
-        element: <Login />,
+        element: isloggedin ? <Navigate to="/Calculator" /> : <Login />,
       },
+
       {
         path: "SignUp",
-        element: <SignUp />,
+        element: isloggedin ? <Navigate to="/Calculator" /> : <SignUp />,
       },
 
       // protected routs
@@ -59,10 +71,7 @@ const router = createBrowserRouter([
             path: "LogOut",
             element: <LogOut />,
           },
-          {
-            path: "SignUp",
-            element: <SignUp />,
-          },
+
           {
             path: "Calculator",
             element: <Calculator />,

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+const Login = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState({
     email: "",
@@ -18,8 +18,8 @@ const SignUp = () => {
       input.password === loggedUser.password
     ) {
       localStorage.setItem("loggedin", true);
-      alert("logged in Successfully");
-      navigate("/Calculator");
+      // alert("logged in Successfully");
+      navigate("/Calculator", { replace: true });
     } else {
       alert("wrong Password or Email");
     }
@@ -69,7 +69,7 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;
 
 // import React, { useState } from "react";
 // import styles from "./Login.module.css";
