@@ -6,7 +6,7 @@ function APOD() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const url = `https://api.nasa.gov/planetary/apod?api_key=ozGfpwfO7On1rRJ10ThENy3IgheGUzK0EyTHYz8o`;
+    const url = `https://api.nasa.gov/planetary/apod?api_key=`;
     fetch(url)
       .then((res) => {
         return res.json();
