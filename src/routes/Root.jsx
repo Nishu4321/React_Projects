@@ -161,6 +161,30 @@ export default function Root() {
                 Air_Quality
               </Link>
             </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/Login"}
+              >
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/SignUp"}
+              >
+                SignUp
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={"/LogOut"}
+              >
+                LogOut
+              </Link>
+            </li>
           </ul>
         </nav>
         <Outlet />

@@ -1,0 +1,26 @@
+.main_div{
+  margin-top: 50px;
+  margin-left: 500px;
+    background-color: rgb(176, 171, 171);
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 62px 0px 62px 57px;
+    border-radius: 25px;
+    
+}
+.main_div button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgb(61, 60, 60);
+    color: aliceblue;
+}

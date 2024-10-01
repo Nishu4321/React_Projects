@@ -24,6 +24,10 @@ import Form from "./Form/Form.jsx";
 import ImageSearchMain from "./ImageSearch/ImageSearchMain.jsx";
 import APOD from "./APOD_NASA/APOD.jsx";
 import Quality from "./Air_Quality/Quality.jsx";
+import Login from "./LogIn/Login.jsx";
+import SignUp from "./SignUp/SignUp.jsx";
+import LogOut from "./LogOut/LogOut.jsx";
+import ProtectedRouts from "./ProtectedRouts/ProtectedRouts.jsx";
 
 function ErrorPage(params) {
   return <div>Error</div>;
@@ -36,87 +40,112 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
 
     children: [
-      { index: true, element: <Calculator /> },
+      { index: true, element: <Login /> },
+
       {
-        path: "Calculator",
-        element: <Calculator />,
+        path: "Login",
+        element: <Login />,
       },
       {
-        path: "Calculator2",
-        element: <Calculator2 />,
+        path: "SignUp",
+        element: <SignUp />,
       },
+
+      // protected routs
       {
-        path: "TicTacToe",
-        element: <TicTacToe />,
+        element: <ProtectedRouts />,
+        children: [
+          {
+            path: "LogOut",
+            element: <LogOut />,
+          },
+          {
+            path: "SignUp",
+            element: <SignUp />,
+          },
+          {
+            path: "Calculator",
+            element: <Calculator />,
+          },
+          {
+            path: "Calculator2",
+            element: <Calculator2 />,
+          },
+          {
+            path: "TicTacToe",
+            element: <TicTacToe />,
+          },
+          {
+            path: "DiceGame",
+            element: <DiceGame />,
+          },
+          {
+            path: "Project",
+            element: <Project />,
+          },
+          {
+            path: "ContactUs",
+            element: <ContactUs />,
+          },
+          {
+            path: "Rock",
+            element: <Rock />,
+          },
+          {
+            path: "ToDoList",
+            element: <ToDoList />,
+          },
+          {
+            path: "ShoppingCart",
+            element: <ShoppingCart />,
+          },
+          {
+            path: "Mui",
+            element: <Mui />,
+          },
+          {
+            path: "Api",
+            element: <Api />,
+          },
+          {
+            path: "ServerApi",
+            element: <ServerApi />,
+          },
+          {
+            path: "/E_Commerce",
+            element: <E_Commerce />,
+          },
+          {
+            path: "/E_Commerce/Cart",
+            element: <Cart />,
+          },
+          {
+            path: "Products",
+            element: <Products />,
+          },
+          {
+            path: "QuizMain",
+            element: <QuizMain />,
+          },
+          {
+            path: "Form",
+            element: <Form />,
+          },
+          {
+            path: "ImageSearchMain",
+            element: <ImageSearchMain />,
+          },
+          {
+            path: "APOD",
+            element: <APOD />,
+          },
+          {
+            path: "Quality",
+            element: <Quality />,
+          },
+        ],
       },
-      {
-        path: "DiceGame",
-        element: <DiceGame />,
-      },
-      {
-        path: "Project",
-        element: <Project />,
-      },
-      {
-        path: "ContactUs",
-        element: <ContactUs />,
-      },
-      {
-        path: "Rock",
-        element: <Rock />,
-      },
-      {
-        path: "ToDoList",
-        element: <ToDoList />,
-      },
-      {
-        path: "ShoppingCart",
-        element: <ShoppingCart />,
-      },
-      {
-        path: "Mui",
-        element: <Mui />,
-      },
-      {
-        path: "Api",
-        element: <Api />,
-      },
-      {
-        path: "ServerApi",
-        element: <ServerApi />,
-      },
-      {
-        path: "/E_Commerce",
-        element: <E_Commerce />,
-      },
-      {
-        path: "/E_Commerce/Cart",
-        element: <Cart />,
-      },
-      {
-        path: "Products",
-        element: <Products />,
-      },
-      {
-        path: "QuizMain",
-        element: <QuizMain />,
-      },
-      {
-        path: "Form",
-        element: <Form />,
-      },
-      {
-        path: "ImageSearchMain",
-        element: <ImageSearchMain />,
-      },
-      {
-        path: "APOD",
-        element: <APOD />,
-      },
-      {
-        path: "Quality",
-        element: <Quality />,
-      },
+
       /* the rest of the routes */
     ],
   },
