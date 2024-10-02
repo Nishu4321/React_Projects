@@ -154,7 +154,15 @@ const Quiz = () => {
         )}
 
         {viewAnswers ? (
-          <AnswerReview results={results} selectedAnswers={selectedAnswers} />
+          <AnswerReview
+            results={results}
+            selectedAnswers={selectedAnswers}
+            currentQuestionIndex={currentQuestionIndex}
+            currentQuestion={currentQuestion}
+            setCurrentQuestionIndex={setCurrentQuestionIndex}
+            handleNextQuestion={handleNextQuestion}
+            setLock={setLock}
+          />
         ) : (
           <></>
         )}

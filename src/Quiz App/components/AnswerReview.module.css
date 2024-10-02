@@ -36,3 +36,74 @@
   .answers li .wrong {
     color: red; /* Add styles for wrong answers if needed */
   }
+
+
+
+  .content{
+    border: 2px solid black;
+    padding: 35px;
+    border-radius: 10px;
+}
+
+.content ul{
+  margin-top: 10px;
+}
+.content ul li {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding-left: 15px;
+  border: 1px solid black;
+  margin-top: 4px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.content h3{
+  font-size: 27px;
+  font-weight: 500;
+}
+
+
+.correct{
+  background-color: rgb(86, 234, 88);
+  color: white;
+}
+.wrong{
+  background-color: rgb(180, 70, 70);
+  color: rgb(225, 216, 216);
+  /* background-color: #f56565;
+  border-color: #FF4A4A; */
+}
+.index{
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.buttons button{
+  margin: auto;
+  width: 225px;
+  height: 65px;
+  background: #775ec4;
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+
+.answer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
