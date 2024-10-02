@@ -2,10 +2,24 @@ import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./Root.module.css";
 import { useEffect, useState } from "react";
-export default function Root() {
-  const navigate = useNavigate;
 
-  const loggedin = localStorage.getItem("loggedin");
+export default function Root() {
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("loggedin") === "true"
+  );
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setIsLoggedIn(localStorage.getItem("loggedin") === "true");
+    };
+
+    // Listen for changes in localStorage
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   return (
     <>
@@ -13,7 +27,7 @@ export default function Root() {
       <div id="detail">
         <nav className={`${styles.navbar}`}>
           <ul>
-            {loggedin ? (
+            {isLoggedIn ? (
               <>
                 <li>
                   <Link

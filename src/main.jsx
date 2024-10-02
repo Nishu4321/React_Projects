@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import Root from "./routes/Root.jsx";
@@ -34,136 +34,158 @@ import LogOut from "./LogOut/LogOut.jsx";
 import ProtectedRouts from "./ProtectedRouts/ProtectedRouts.jsx";
 import LoginRoute from "./ProtectedRouts/LoginRoute.jsx";
 
-const isloggedin = localStorage.getItem("loggedin");
+const App = () => {
+  // const [isLoggedIn, setIsLoggedIn] = useState(
+  //   localStorage.getItem("loggedin") === "true"
+  // );
 
-function ErrorPage(params) {
-  return <div>Error</div>;
-}
+  // useEffect(() => {
+  //   const handelStorageChange = () => {
+  //     setIsLoggedIn(localStorage.getItem("loggedin") === "true");
+  //   };
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
+  //   window.addEventListener("storage", handelStorageChange);
+  //   return () => {
+  //     window.addEventListener("storage", handelStorageChange);
+  //   };
+  // }, []);
 
-    children: [
-      {
-        index: true,
-        element: isloggedin ? <Calculator /> : <Login />,
-      },
+  function ErrorPage(params) {
+    return <div>Error</div>;
+  }
 
-      // Unauthorized routes
-      {
-        path: "Login",
-        element: isloggedin ? <Navigate to="/Calculator" /> : <Login />,
-      },
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <ErrorPage />,
 
-      {
-        path: "SignUp",
-        element: isloggedin ? <Navigate to="/Calculator" /> : <SignUp />,
-      },
+      children: [
+        {
+          index: true,
+          element: <Login />,
+        },
 
-      // protected routs
-      {
-        element: <ProtectedRouts />,
-        children: [
-          {
-            path: "LogOut",
-            element: <LogOut />,
-          },
+        // Unauthorized routes
+        {
+          element: <LoginRoute />,
+          children: [
+            {
+              path: "Login",
+              element: <Login />,
+            },
 
-          {
-            path: "Calculator",
-            element: <Calculator />,
-          },
-          {
-            path: "Calculator2",
-            element: <Calculator2 />,
-          },
-          {
-            path: "TicTacToe",
-            element: <TicTacToe />,
-          },
-          {
-            path: "DiceGame",
-            element: <DiceGame />,
-          },
-          {
-            path: "Project",
-            element: <Project />,
-          },
-          {
-            path: "ContactUs",
-            element: <ContactUs />,
-          },
-          {
-            path: "Rock",
-            element: <Rock />,
-          },
-          {
-            path: "ToDoList",
-            element: <ToDoList />,
-          },
-          {
-            path: "ShoppingCart",
-            element: <ShoppingCart />,
-          },
-          {
-            path: "Mui",
-            element: <Mui />,
-          },
-          {
-            path: "Api",
-            element: <Api />,
-          },
-          {
-            path: "ServerApi",
-            element: <ServerApi />,
-          },
-          {
-            path: "/E_Commerce",
-            element: <E_Commerce />,
-          },
-          {
-            path: "/E_Commerce/Cart",
-            element: <Cart />,
-          },
-          {
-            path: "Products",
-            element: <Products />,
-          },
-          {
-            path: "QuizMain",
-            element: <QuizMain />,
-          },
-          {
-            path: "Form",
-            element: <Form />,
-          },
-          {
-            path: "ImageSearchMain",
-            element: <ImageSearchMain />,
-          },
-          {
-            path: "APOD",
-            element: <APOD />,
-          },
-          {
-            path: "Quality",
-            element: <Quality />,
-          },
-        ],
-      },
+            {
+              path: "SignUp",
+              element: <SignUp />,
+            },
+          ],
+        },
 
-      /* the rest of the routes */
-    ],
-  },
-]);
+        // protected routs
+        {
+          element: <ProtectedRouts />,
+          children: [
+            {
+              path: "LogOut",
+              element: <LogOut />,
+            },
+
+            {
+              path: "Calculator",
+              element: <Calculator />,
+            },
+            {
+              path: "Calculator2",
+              element: <Calculator2 />,
+            },
+            {
+              path: "TicTacToe",
+              element: <TicTacToe />,
+            },
+            {
+              path: "DiceGame",
+              element: <DiceGame />,
+            },
+            {
+              path: "Project",
+              element: <Project />,
+            },
+            {
+              path: "ContactUs",
+              element: <ContactUs />,
+            },
+            {
+              path: "Rock",
+              element: <Rock />,
+            },
+            {
+              path: "ToDoList",
+              element: <ToDoList />,
+            },
+            {
+              path: "ShoppingCart",
+              element: <ShoppingCart />,
+            },
+            {
+              path: "Mui",
+              element: <Mui />,
+            },
+            {
+              path: "Api",
+              element: <Api />,
+            },
+            {
+              path: "ServerApi",
+              element: <ServerApi />,
+            },
+            {
+              path: "/E_Commerce",
+              element: <E_Commerce />,
+            },
+            {
+              path: "/E_Commerce/Cart",
+              element: <Cart />,
+            },
+            {
+              path: "Products",
+              element: <Products />,
+            },
+            {
+              path: "QuizMain",
+              element: <QuizMain />,
+            },
+            {
+              path: "Form",
+              element: <Form />,
+            },
+            {
+              path: "ImageSearchMain",
+              element: <ImageSearchMain />,
+            },
+            {
+              path: "APOD",
+              element: <APOD />,
+            },
+            {
+              path: "Quality",
+              element: <Quality />,
+            },
+          ],
+        },
+
+        /* the rest of the routes */
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
+};
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ShopContextProvider>
-      <RouterProvider router={router} />
+      <App />
     </ShopContextProvider>
   </StrictMode>
 );

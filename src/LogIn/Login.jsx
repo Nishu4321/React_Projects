@@ -18,8 +18,9 @@ const Login = () => {
       input.password === loggedUser.password
     ) {
       localStorage.setItem("loggedin", true);
-      // alert("logged in Successfully");
+      alert("logged in Successfully");
       navigate("/Calculator", { replace: true });
+      window.location.reload();
     } else {
       alert("wrong Password or Email");
     }
