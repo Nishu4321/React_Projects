@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
+import { users } from "./Component/users";
+import ForgotPassword from "./Component/ForgotPassword";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,22 +11,54 @@ const Login = () => {
     password: "",
   });
 
+  const handelForgotPassword = () => {
+    navigate("/forgot-password");
+    console.log("clicked");
+    <ForgotPassword />;
+  };
+
   const handelLogin = (e) => {
     e.preventDefault();
-    const loggedUser = JSON.parse(localStorage.getItem("user")); // JSON.prase converts string to object
-    // console.log(loggedUser);
-    if (
-      input.email === loggedUser.email &&
-      input.password === loggedUser.password
-    ) {
-      localStorage.setItem("loggedin", true);
-      alert("logged in Successfully");
+
+    // Check if the username and password match any user
+    const user = users.find(
+      (user) => user.email === input.email && user.password === input.password
+    );
+
+    if (user) {
+      // Successful login
+      alert("Login successful!");
+      window.location.reload();
+      localStorage.setItem("loggedin", "true");
+      localStorage.setItem("username", username); // Store username
+      setError("");
+      // Redirect or update state here as needed
+
       navigate("/Calculator", { replace: true });
       window.location.reload();
     } else {
-      alert("wrong Password or Email");
+      // Failed login
+      setError("Invalid username or password.");
+      alert("Invalid username or password.");
     }
   };
+
+  // const handelLogin = (e) => {
+  //   e.preventDefault();
+  //   const loggedUser = JSON.parse(localStorage.getItem("user")); // JSON.prase converts string to object
+  //   // console.log(loggedUser);
+  //   if (
+  //     input.email === loggedUser.email &&
+  //     input.password === loggedUser.password
+  //   ) {
+  //     localStorage.setItem("loggedin", true);
+  //     alert("logged in Successfully");
+  //     navigate("/Calculator", { replace: true });
+  //     window.location.reload();
+  //   } else {
+  //     alert("wrong Password or Email");
+  //   }
+  // };
   // console.log(input);
   return (
     <>
@@ -58,6 +92,12 @@ const Login = () => {
                 setInput({ ...input, [e.target.name]: e.target.value })
               }
             />
+          </div>
+          <div className={`${styles.forgot_password}`}>
+            <p>
+              Forgot Password?{" "}
+              <span onClick={handelForgotPassword}>Click here</span>
+            </p>
           </div>
           <div className={`${styles.btn_div}`}>
             <button type="submit" className={`${styles.log_button}`}>

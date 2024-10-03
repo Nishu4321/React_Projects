@@ -33,6 +33,8 @@ import SignUp from "./SignUp/SignUp.jsx";
 import LogOut from "./LogOut/LogOut.jsx";
 import ProtectedRouts from "./ProtectedRouts/ProtectedRouts.jsx";
 import LoginRoute from "./ProtectedRouts/LoginRoute.jsx";
+import ForgotPassword from "./LogIn/Component/ForgotPassword.jsx";
+import ResetPassword from "./LogIn/Component/ResetPassword.jsx";
 
 const App = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(
@@ -78,6 +80,14 @@ const App = () => {
             {
               path: "SignUp",
               element: <SignUp />,
+            },
+            {
+              path: "forgot-password",
+              element: <ForgotPassword />,
+            },
+            {
+              path: "ResetPassword",
+              element: <ResetPassword />,
             },
           ],
         },
