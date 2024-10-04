@@ -185,6 +185,14 @@ export default function Root() {
                 <li>
                   <Link
                     style={{ color: "white", textDecoration: "none" }}
+                    to={"/Resume"}
+                  >
+                    Resume
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    style={{ color: "white", textDecoration: "none" }}
                     to={"/LogOut"}
                   >
                     LogOut

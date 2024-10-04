@@ -1,0 +1,8 @@
+.heading{
+    display: flex;
+    flex-direction: column;
+    align-items:self-start;
+   padding: 30px;
+    background-color: rgb(180 173 173);
+}
+

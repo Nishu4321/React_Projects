@@ -1,0 +1,14 @@
+.div_1{
+    
+    padding: 10px;
+    padding-left: 20px;
+    /* background-color: rgb(194, 140, 74); */
+    gap: 5px;
+}
+
+.div_1 ul{
+    padding-left: 15px;
+}
+.div_1 hr{
+    border: 1px solid black;
+}

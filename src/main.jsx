@@ -35,6 +35,7 @@ import ProtectedRouts from "./ProtectedRouts/ProtectedRouts.jsx";
 import LoginRoute from "./ProtectedRouts/LoginRoute.jsx";
 import ForgotPassword from "./LogIn/Component/ForgotPassword.jsx";
 import ResetPassword from "./LogIn/Component/ResetPassword.jsx";
+import Resume from "./Resume/Resume.jsx";
 
 const App = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(
@@ -96,6 +97,10 @@ const App = () => {
         {
           element: <ProtectedRouts />,
           children: [
+            {
+              path: "Resume",
+              element: <Resume />,
+            },
             {
               path: "LogOut",
               element: <LogOut />,

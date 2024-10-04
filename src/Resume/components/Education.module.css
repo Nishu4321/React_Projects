@@ -1,0 +1,13 @@
+.div_1{
+  
+    /* background-color: blue; */
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.div_1 p{
+    padding-top: 7px;
+}
+.div_1 hr{
+    border: 1px solid black;
+}
