@@ -1,0 +1,50 @@
+
+
+
+.property_list{
+    height: 400px;
+    width: 500px;
+      display: flex;
+      flex-direction: column;
+    justify-content: center;
+background-color: red
+}
+
+.property_content{
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: rgb(222, 219, 219);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+.property_content p{
+    margin-top: 3px;
+}
+
+.three_btn{
+    display: flex;
+}
+
+.three_btn button{
+    background-color: rgb(79, 77, 77);
+    width: 100px;
+    height:36px ;
+}
+
+.contact_btn{
+    font-size: 12px;
+    padding: 5px;
+}
+
+.property_content img{
+    
+        height: 200px;
+        width: 300px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+   
+}
