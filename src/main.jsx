@@ -36,6 +36,11 @@ import LoginRoute from "./ProtectedRouts/LoginRoute.jsx";
 import ForgotPassword from "./LogIn/Component/ForgotPassword.jsx";
 import ResetPassword from "./LogIn/Component/ResetPassword.jsx";
 import Resume from "./Resume/Resume.jsx";
+import RealEstate from "./RealEstate/RealEstate.jsx";
+import Redux from "./Redux/Redux.jsx";
+import SocialMedia from "./SocialMedia/SocialMedia.jsx";
+import CreatePost from "./SocialMedia/components/CreatePost.jsx";
+import Home from "./SocialMedia/components/Home.jsx";
 
 const App = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(
@@ -97,6 +102,26 @@ const App = () => {
         {
           element: <ProtectedRouts />,
           children: [
+            {
+              path: "/SocialMedia",
+              element: <SocialMedia />,
+            },
+            {
+              path: "/SocialMedia/Home",
+              element: <Home />,
+            },
+            {
+              path: "/SocialMedia/CreatePost",
+              element: <CreatePost />,
+            },
+            {
+              path: "Redux",
+              element: <Redux />,
+            },
+            {
+              path: "RealEstate",
+              element: <RealEstate />,
+            },
             {
               path: "Resume",
               element: <Resume />,

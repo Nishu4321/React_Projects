@@ -193,6 +193,30 @@ export default function Root() {
                 <li>
                   <Link
                     style={{ color: "white", textDecoration: "none" }}
+                    to={"/RealEstate"}
+                  >
+                    Real_Estate
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    style={{ color: "white", textDecoration: "none" }}
+                    to={"/Redux"}
+                  >
+                    Redux
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    style={{ color: "white", textDecoration: "none" }}
+                    to={"/SocialMedia"}
+                  >
+                    SocialMedia
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    style={{ color: "white", textDecoration: "none" }}
                     to={"/LogOut"}
                   >
                     LogOut
