@@ -1,0 +1,158 @@
+.body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9;
+  }
+  
+  .app {
+    display: flex;
+  }
+  
+  .sidebar {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+    height: auto;
+    background-color: #daca8e;
+  }
+  
+  .profile_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .education{
+    
+    margin-top: 25px;
+  }
+  .education ul{
+    list-style-type: none;
+  }
+  .education li{
+    margin-top: 4px;
+  }
+
+  .btn{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile_section h2, .profile_section h4 {
+    text-align: center;
+  }
+  
+  .contact_info p, .skills_section h3, .skills_section ul, .extra-skills ul {
+    margin-bottom: 10px;
+  }
+
+  .contact_info{
+    margin-top: 25px;
+  }
+  .skills_section, .extra_skills, .education, .btn{
+    margin-top: 25px;
+  }
+  
+  .skills_section ul, .extra_skills ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .download_cv {
+    display: block;
+    width: 100%;
+    background-color: #ffcc00;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+  .avatar{
+       
+  }
+  .profile_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+
+  /* MainSection */
+  .main_section {
+    padding: 40px;
+    flex-grow: 1;
+    background-color: #efd97f;
+  }
+  
+  .intro_section {
+    text-align: center;
+  }
+  
+  .hire_me_btn{
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .services_section {
+    margin-top: 40px;
+  }
+  
+  .services_grid {
+    display: grid;
+     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+    
+  }
+
+
+
+
+  
+
+  
+  .service_item {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .service_item h3 {
+    margin-bottom: 10px;
+  }
+
+  .about_section{
+    margin-top: 20px;
+    background-color: white;
+    height: 206px;
+    padding: 20px;
+    padding-top: 30px;
+    font-size: 20px;
+    border: 1px solid rgb(203, 200, 200);
+  }
+  .about_section p{
+    margin-top: 5px;
+    font-weight:500 ;
+  }
+
+  .experience_section{
+    margin-top: 20px;
+    background-color: white;
+    height: 206px;
+    padding:30px 20px 20px 40px;
+    font-size: 20px;
+    border: 1px solid rgb(203, 200, 200);
+  }
+
+  .experience_section p{
+    margin-top: 5px;
+  }
+
+  

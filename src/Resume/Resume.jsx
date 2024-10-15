@@ -18,7 +18,7 @@ const Resume = () => {
         company: "HAILABS",
         date: "July 2023 - June 2023",
         description: `Standardized Test Plan, Test Scripts/Test Cases, Daily Status
-Reports, etc., documents leading to a 20% increase in productivity.`,
+                      Reports, etc., documents leading to a 20% increase in productivity.`,
       },
       {
         title: "Testing",

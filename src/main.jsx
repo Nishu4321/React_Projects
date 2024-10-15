@@ -41,6 +41,7 @@ import Redux from "./Redux/Redux.jsx";
 import SocialMedia from "./SocialMedia/SocialMedia.jsx";
 import CreatePost from "./SocialMedia/components/CreatePost.jsx";
 import Home from "./SocialMedia/components/Home.jsx";
+import Resume2 from "./Resume2/Resume2.jsx";
 
 const App = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(
@@ -102,6 +103,10 @@ const App = () => {
         {
           element: <ProtectedRouts />,
           children: [
+            {
+              path: "/Resume2",
+              element: <Resume2 />,
+            },
             {
               path: "/SocialMedia",
               element: <SocialMedia />,
