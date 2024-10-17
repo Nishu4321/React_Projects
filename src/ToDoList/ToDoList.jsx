@@ -57,7 +57,7 @@ const ToDoList = () => {
     return (
       <div key={index} className={`${styles.data}`}>
         <div className={`${styles.input_data}`}>
-          <form onSubmit={editHandler}>
+          <form style={{ display: "flex" }} onSubmit={editHandler}>
             <input
               type="text"
               className={`${styles.input}`}
@@ -116,7 +116,7 @@ const ToDoList = () => {
         </div>
 
         <div className={`${styles.formdiv}`}>
-          <form onSubmit={submitHandler}>
+          <form style={{ display: "flex" }} onSubmit={submitHandler}>
             <input
               type="text"
               className={`${styles.input}`}

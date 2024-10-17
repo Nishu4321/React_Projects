@@ -42,6 +42,8 @@ import SocialMedia from "./SocialMedia/SocialMedia.jsx";
 import CreatePost from "./SocialMedia/components/CreatePost.jsx";
 import Home from "./SocialMedia/components/Home.jsx";
 import Resume2 from "./Resume2/Resume2.jsx";
+import Temp from "./Example/Temp.jsx";
+import StopWatch from "./Stop Watch/StopWatch.jsx";
 
 const App = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(
@@ -103,6 +105,14 @@ const App = () => {
         {
           element: <ProtectedRouts />,
           children: [
+            {
+              path: "/StopWatch",
+              element: <StopWatch />,
+            },
+            {
+              path: "/Temp",
+              element: <Temp />,
+            },
             {
               path: "/Resume2",
               element: <Resume2 />,

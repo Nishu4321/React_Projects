@@ -222,6 +222,22 @@ export default function Root() {
                     Resume2
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    style={{ color: "white", textDecoration: "none" }}
+                    to={"/Temp"}
+                  >
+                    Temp
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    style={{ color: "white", textDecoration: "none" }}
+                    to={"/StopWatch"}
+                  >
+                    Stop Watch
+                  </Link>
+                </li>
 
                 <li>
                   <Link
